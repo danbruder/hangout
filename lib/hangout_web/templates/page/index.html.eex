@@ -14,18 +14,3 @@
     </ul>
   </div>
 </div>
-<div class="row">
-  <div class="col-md-8">
-      <video id="video1" autoplay></video>
-  </div>
-  <div  class="col-md-4">
-    <button>Take snapshot</button>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-8">
-      <video id="video2" autoplay></video>
-  </div>
-  <div  class="col-md-4">
-  </div>
-</div>
