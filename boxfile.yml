@@ -34,3 +34,6 @@ deploy.config:
 # services
 web.main:
   start: node-start mix phx.server
+
+data.db:
+  image: nanobox/postgresql
