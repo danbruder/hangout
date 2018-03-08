@@ -2,10 +2,10 @@ defmodule HangoutWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", HangoutWeb.RoomChannel
+  channel("room:*", HangoutWeb.RoomChannel)
 
   ## Transports
-  transport :websocket, Phoenix.Transports.WebSocket
+  transport(:websocket, Phoenix.Transports.WebSocket)
   # transport :longpoll, Phoenix.Transports.LongPoll
 
   # Socket params are passed from the client and can
@@ -19,6 +19,10 @@ defmodule HangoutWeb.UserSocket do
   #
   # See `Phoenix.Token` documentation for examples in
   # performing token verification on connect.
+  def connect(%{"user" => user}, socket) do
+    {:ok, assign(socket, :user, user)}
+  end
+
   def connect(_params, socket) do
     {:ok, socket}
   end

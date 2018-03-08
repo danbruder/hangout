@@ -6,16 +6,14 @@
 use Mix.Config
 
 # General application configuration
-config :hangout,
-  ecto_repos: [Hangout.Repo]
+config :hangout, ecto_repos: [Hangout.Repo]
 
 # Configures the endpoint
 config :hangout, HangoutWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "lCDv99NgPp0+eBe+Glret/VkGjNiNPEU1WX4kg22memxVBbShraLfR3Jfw1OyptN",
   render_errors: [view: HangoutWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Hangout.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: Hangout.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -24,4 +22,4 @@ config :logger, :console,
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env}.exs"
+import_config "#{Mix.env()}.exs"
